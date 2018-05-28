@@ -13,10 +13,18 @@ func main() {
 	e.Use(middleware.Recover())
 	e.Use(middleware.LoggerWithConfig(LoggerConfig()))
 
+	// Static
+	e.File("/favicon.ico", "public/images/favicon.ico")
+
 	// Routes
+	e.GET("/", index)
 	e.GET("/ping", pong)
 
 	e.Logger.Fatal(e.Start(":1323"))
+}
+
+func index(c echo.Context) error {
+	return c.String(http.StatusOK, "Welcome!\n")
 }
 
 func pong(c echo.Context) error {
