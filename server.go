@@ -3,6 +3,7 @@ package main
 import (
 	"github.com/labstack/echo"
 	"github.com/labstack/echo/middleware"
+	"log"
 	"net/http"
 	"os"
 )
@@ -21,12 +22,7 @@ func main() {
 	e.GET("/", index)
 	e.GET("/ping", pong)
 
-	port := os.Getenv("PORT")
-	if port == "" {
-		port = ":1323"
-	}
-
-	e.Logger.Fatal(e.Start(port))
+	e.Logger.Fatal(e.Start(getEnv("PORT", ":1323")))
 }
 
 func index(c echo.Context) error {
@@ -35,6 +31,16 @@ func index(c echo.Context) error {
 
 func pong(c echo.Context) error {
 	return c.String(http.StatusOK, "Pong!\n")
+}
+
+func getEnv(key, fallback string) string {
+	log.Println("Looking for environment variable: " + key)
+	if value, ok := os.LookupEnv(key); ok {
+		log.Println("Found: " + value)
+		return value
+	}
+	log.Println("Not Found, using fallback")
+	return fallback
 }
 
 func LoggerConfig() middleware.LoggerConfig {
