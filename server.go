@@ -4,6 +4,7 @@ import (
 	"github.com/labstack/echo"
 	"github.com/labstack/echo/middleware"
 	"net/http"
+	"os"
 )
 
 func main() {
@@ -20,7 +21,12 @@ func main() {
 	e.GET("/", index)
 	e.GET("/ping", pong)
 
-	e.Logger.Fatal(e.Start(":1323"))
+	port := os.Getenv("PORT")
+	if port == "" {
+		port = ":1323"
+	}
+
+	e.Logger.Fatal(e.Start(port))
 }
 
 func index(c echo.Context) error {
