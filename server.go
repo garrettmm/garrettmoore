@@ -37,7 +37,7 @@ func getEnv(key, fallback string) string {
 	log.Println("Looking for environment variable: " + key)
 	if value, ok := os.LookupEnv(key); ok {
 		log.Println("Found: " + value)
-		return value
+		return ":" + value
 	}
 	log.Println("Not Found, using fallback")
 	return fallback
