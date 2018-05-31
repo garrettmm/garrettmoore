@@ -25,7 +25,7 @@
 #   unused-packages = true
 
 [[metadata.heroku]]
-  root-package = "github.com/garrettmm/garrettmoore"
+  root-package = "github.com/garrettmm/garrettmoore/server"
   go-version = "go1.10.2"
   install = ["./cmd/server", "./internal/..."]
 
