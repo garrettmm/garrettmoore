@@ -27,7 +27,7 @@
 [[metadata.heroku]]
   root-package = "github.com/garrettmm/garrettmoore"
   go-version = "go1.10.2"
-  install=["./cmd/..."]
+  install=["./cmd/...", "./internal/..."]
 
 [[constraint]]
   name = "github.com/labstack/echo"
