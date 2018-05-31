@@ -17,6 +17,7 @@ func main() {
 
 	// Static
 	e.File("/favicon.ico", "public/images/favicon.ico")
+	e.File("/", "index.html")
 
 	// Routes
 	e.GET("/", index)
