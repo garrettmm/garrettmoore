@@ -3,8 +3,8 @@ package app
 import (
 	"github.com/labstack/echo"
 
-	"github.com/garrettmm/garrettmoore/internal/middleware"
-	"github.com/garrettmm/garrettmoore/internal/routes"
+	"github.com/garrettmm/garrettmoore/pkg/middleware"
+	"github.com/garrettmm/garrettmoore/pkg/routes"
 )
 
 func Init() {

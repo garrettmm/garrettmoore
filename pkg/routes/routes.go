@@ -3,7 +3,7 @@ package routes
 import (
 	"github.com/labstack/echo"
 
-	"github.com/garrettmm/garrettmoore/internal/context"
+	"github.com/garrettmm/garrettmoore/pkg/context"
 )
 
 func Register(server *echo.Echo) {

@@ -1,7 +1,7 @@
 package main
 
 import (
-	"github.com/garrettmm/garrettmoore/internal/app"
+	"github.com/garrettmm/garrettmoore/pkg/app"
 )
 
 func main() {
