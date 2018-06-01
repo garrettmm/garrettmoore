@@ -25,9 +25,9 @@
 #   unused-packages = true
 
 [[metadata.heroku]]
-  root-package = "github.com/garrettmm/garrettmoore/cmd/server"
+  root-package = "server"
   go-version = "go1.10.2"
-  install = ["./internal/...", "./cmd/server"]
+  install = ["./..."]
 
 [[constraint]]
   name = "github.com/labstack/echo"
